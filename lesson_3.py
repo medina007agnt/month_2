@@ -1,4 +1,6 @@
+"""ПОЛИМОРФИЗМ"""
 #родительский , суперкласс
+
 class Car:
     def __init__(self, model, color):
         self.model= model
@@ -14,9 +16,17 @@ class Bus(Car):
         self.number = number
 
     def drive_to(self, destination):
+        super().drive_to(destination)
         print(f"Bus {self.model} Draiving to", destination)
+
+class Truck(Car):
+    def drive_to(self, destination):
+        print(f"Truck Draiving to", destination)
+
 bus_42 = Bus("Ikareus", "green","42")
-print(bus_42.number)
-bus_42.drive_to("Bishkek")
-print(type(bus_42))
-print(isinstance(bus_42, Bus ))  #isinstance — это функция, которая проверяет тип переменной.
+truck = Truck("MAN", "white")
+car_subaru = Car("subaru", "red")
+
+vehicales = (bus_42, truck, car_subaru)
+for v in vehicales:
+    v.drive_to("Bishkek")
