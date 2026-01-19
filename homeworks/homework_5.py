@@ -7,7 +7,11 @@ class Car(Vehicle):
         super().start()
         print("Car starting")
 
-class Tesla(Car, Vehicle):
+class ElectricCar(Vehicle):
+        def start(self):
+            super().start()
+
+class Tesla(ElectricCar, Car):
     def start(self):
         super().start()
         print("Tesla ready")
