@@ -28,13 +28,7 @@ def insert_books():
         ("White Steamship", "Chyngyz Aitmatov", 1970, "Story", 336, 5),
         ("Harry Potter", "J.K. Rowling", 1997, "Fantasy", 320, 10),
         ("The Hobbit", "J.R.R. Tolkien", 1937, "Fantasy", 310, 7),
-        ("Pride and Prejudice", "Jane Austen", 1813, "Romance", 279, 4),
-        ("To Kill a Mockingbird", "Harper Lee", 1960, "Drama", 281, 6),
-        ("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Novel", 180, 3),
-        ("Moby Dick", "Herman Melville", 1851, "Adventure", 635, 2),
-        ("War and Peace", "Leo Tolstoy", 1869, "Historical", 1225, 1),
-        ("Crime and Punishment", "Fyodor Dostoevsky", 1866, "Psychological", 671, 4),
-        ("The Little Prince", "Antoine de Saint-Exupéry", 1943, "Fairy tale", 96, 8)
+        ("Pride and Prejudice", "Jane Austen", 1813, "Romance", 279, 4)
     ]
 
     cursor.executemany("""
@@ -47,7 +41,6 @@ def insert_books():
     print("Книги добавлены в таблицу.")
 
 
-# НОВЫЕ ФУНКЦИИ ПО ЗАДАНИЮ
 
 def delete_book(book_id):
     conn = sqlite3.connect("library.db")
@@ -79,18 +72,12 @@ def get_all_books():
     return books
 
 
-
 if __name__ == "__main__":
     create_table()
 
     insert_books()
 
-    delete_book(10)
-    delete_book(13)
-    delete_book(5)
-
-
-    delete_book(15)
+    delete_book(1)
 
     update_book_name(2, "The White Ship (Updated)")
 
